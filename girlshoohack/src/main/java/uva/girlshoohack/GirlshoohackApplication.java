@@ -1,13 +1,13 @@
-package GirlsHooHack.demo;
+package uva.girlshoohack;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GirlsHooHackHackathonApplication {
+public class GirlshoohackApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(GirlsHooHackHackathonApplication.class, args);
+		SpringApplication.run(GirlshoohackApplication.class, args);
 	}
 
 }

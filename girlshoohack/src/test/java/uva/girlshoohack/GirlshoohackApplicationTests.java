@@ -1,10 +1,10 @@
-package GirlsHooHack.demo;
+package uva.girlshoohack;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class GirlsHooHackHackathonApplicationTests {
+class GirlshoohackApplicationTests {
 
 	@Test
 	void contextLoads() {
