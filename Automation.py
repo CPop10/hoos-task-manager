@@ -1,5 +1,4 @@
 import smtplib
-import os
 import time
 from datetime import datetime, timedelta
 
@@ -12,21 +11,23 @@ def check_task_time(name, description, due_time, email):
             break
         time.sleep(60)
 
-
-
 #below is placeholder for actual email info/function
 
-email_subject = "X" #getting rid of later
-email_body = "Y" #getting rid of later
-email_receiver = "C" #getting rid of later
-def send_email (task_name, task_description receiver_email): # will get rid of later 
-    EMAIL_ADDRESS = os.environ.get('EMAIL_USER')
-    EMAIL_PASSWORD = os.environ.get('EMAIL_PASS')
+def send_email (task_name, task_description, receiver_email): # will get rid of later 
+    EMAIL_ADDRESS = "debug@localhost"
 
-    with smtplib.SMTP('smtp@gmail.com', 587) as smtp:
-        smtp.ehlo()
-        smtp.starttls()
-        smtp.ehlo()
-        smtp.login(EMAIL_ADDRESS, EMAIL_ADDRESS)
-        msg = f'Subject: {task_name}/n/n{task_description}'
+    with smtplib.SMTP('localhost', 1025) as smtp:
+        msg = f'Subject: {task_name}\n\n{task_description}'
         smtp.sendmail(EMAIL_ADDRESS, receiver_email, msg)
+
+
+# below is test
+
+send_email("Reminder", "This is your task reminder", "receiver@localhost")
+
+TaskName = "Submit Hackathon"
+TaskDescription = "Submit Hackathon Code to Gradescope to Get Extra Credit for CSO"
+TaskDueDate = datetime.now() + timedelta(hours=1)
+ReceiverEmail = "receiver@localhost"
+
+check_task_time(TaskName, TaskDescription, TaskDueDate, ReceiverEmail)
