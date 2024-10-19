@@ -14,11 +14,9 @@ import org.hibernate.annotations.UpdateTimestamp;
 @Entity
 public class Task {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY) private Long id;
 
-    @Column(nullable = false)
-    private String title;
+    @Column(nullable = false) private String title;
 
     private String description;
 
